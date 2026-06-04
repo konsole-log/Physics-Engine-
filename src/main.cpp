@@ -1,27 +1,15 @@
-#include <raylib.h>
-#include "ball.h"
+#include "raylib.h"
 
-int main() 
-{
-    const Color darkGreen = {20, 160, 133, 255};
-    
-    constexpr int screenWidth = 800;
-    constexpr int screenHeight = 600;
-    
-    Ball ball;
-    
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
+int main() {
+    InitWindow(800, 450, "");
     SetTargetFPS(60);
-    
-    while (!WindowShouldClose())
-    {
-        ball.Update();
-        
+
+    while (!WindowShouldClose()) {
         BeginDrawing();
-            ClearBackground(darkGreen);
-            ball.Draw();
+        ClearBackground(BLACK);
         EndDrawing();
     }
-    
+
     CloseWindow();
+    return 0;
 }
