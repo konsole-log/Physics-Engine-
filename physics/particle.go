@@ -28,5 +28,10 @@ func (p *Particle) Integrate(duration float64) error {
 
 	//Impose drag as v = v*(damping^dt)
 	p.velocity = p.velocity.Scale(math.Pow(p.damping, duration))
+	p.ClearAccumulator()
 	return nil
+}
+
+func (p *Particle) ClearAccumulator() {
+	p.forceAccum = Vector3{}
 }
