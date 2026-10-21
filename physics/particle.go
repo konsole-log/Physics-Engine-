@@ -15,7 +15,7 @@ func (p *Particle) Integrate(duration float64) error {
 	if duration <= 0.0 {
 		return errors.New("duration must be greater than 0")
 	}
-	//update position using formula p=p+p*dt
+	//update position using formula p=p+v*dt
 	p.position = p.position.AddScaledVector(p.velocity, duration)
 
 	//workout the acceleration from the force.
@@ -34,4 +34,8 @@ func (p *Particle) Integrate(duration float64) error {
 
 func (p *Particle) ClearAccumulator() {
 	p.forceAccum = Vector3{}
+}
+
+func (p *Particle) AddForce(force Vector3) {
+	p.forceAccum = p.forceAccum.Add(force)
 }

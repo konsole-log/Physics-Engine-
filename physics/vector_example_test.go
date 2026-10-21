@@ -3,7 +3,7 @@ package physics_test
 import (
 	"fmt"
 
-	"github.com/konsole-log/Physics-Engine-.git/physics"
+	"github.com/konsole-log/Physics-Engine-/physics"
 )
 
 func ExampleNewVector3() {
